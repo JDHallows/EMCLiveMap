@@ -1,5 +1,54 @@
-﻿body {
-  /* Uncomment this to enable scrolling and zooming
-  touch-action: manipulation;
-  */
+﻿html, body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(0,0,0);
+}
+div {
+  width: 20%;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+iframe {
+  height: 100%;
+  width: 80%;
+  float: right;
+  border: none;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #f1f1f1;
+}
+li, li a {
+  display: block;
+  text-decoration: none;
+  color: #000;
+  font-family: Arial;
+  font-size: 1em;
+  text-align: center;
+}
+.active_server, .active_world, a:hover, button:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+button {
+  display: block;
+  width: 100%;
+  outline: none;
+  text-decoration: none;
+  color: #000;
+  font-family: Arial;
+  font-size: 1em;
+  text-align: center;
+  padding: 5px;
+  transition: 0.4s;
+}
+.panel {
+  width: 100%;               
+  display: none;
+  background-color: white;
+  overflow: hidden;
 }
