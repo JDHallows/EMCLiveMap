@@ -90,3 +90,19 @@ div.smp_right_panel {
   float: right;
 }
 
+/*Waste Buttons*/
+button.waste_buttons {
+  font-size: 1.3vw;
+}
+div.waste_left_panel, div.waste_center_panel, div.waste_right_panel {
+  width: 33%;
+}
+div.waste_left_panel {
+  float: left;
+}
+div.waste_center_panel {
+  float: left;
+}
+div.waste_right_panel {
+  float: right;
+}

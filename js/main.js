@@ -1,15 +1,35 @@
-﻿/*
-// Add active class to the current server link (highlight it)
-var header = document.getElementById("server_list");
-var btns = header.getElementsByClassName("server_link");
-for (var i = 0; i < btns.length; i++) {
-    btns[i].addEventListener("click", function () {
-        var current = document.getElementsByClassName("active_server");
-        current[0].className = current[0].className.replace(" active_server", "");
-        this.className += " active_server";
-    });
+﻿// Functions
+function deactivateOutpostButtons() {
+    var active_btns = document.getElementsByClassName("active_minecraft_button");
+    for (var i = 0; i < active_btns.length; i++) {
+        if (!(active_btns[i].classList.contains("sidebar_buttons") || active_btns[i].classList.contains("smp_buttons"))) {
+            active_btns[i].classList.toggle("active_minecraft_button");
+        }
+    }
 }
-*/
+
+function deactivateSMPButtons() {
+    var active_btns = document.getElementsByClassName("active_minecraft_button");
+    for (var i = 0; i < active_btns.length; i++) {
+        if (!active_btns[i].classList.contains("sidebar_buttons") && active_btns[i].classList.contains("smp_buttons")) {
+            active_btns[i].classList.toggle("active_minecraft_button");
+        }
+    }
+}
+
+function getActiveSMP() {
+    var smp;
+    var active_btns = document.getElementsByClassName("active_minecraft_button");
+        for (var i = 0; i < active_btns.length; i++) {
+            if (active_btns[i].classList.contains("smp_buttons")) {
+                smp = active_btns[i].innerHTML;
+            }
+        }
+    return smp;
+}
+
+// End of Functions
+
 
 // Accordion menu for world selection
 var acc = document.getElementsByClassName("accordion");
@@ -31,44 +51,40 @@ var smps = document.getElementsByClassName("smp_buttons");
 
 for (var i = 0; i < smps.length; i++) {
     smps[i].addEventListener("click", function () {
+        deactivateOutpostButtons();
+        deactivateSMPButtons();
         this.classList.toggle("active_minecraft_button");
+        document.getElementById("smp_map").src = "https://" + this.innerHTML + ".emc.gs/";
     });
 }
 
-// On click events
-
+// Town Button
 document.getElementById("btn_town").addEventListener("click", function () {
-    
+    var active_btns = document.getElementsByClassName("active_minecraft_button");
+        for (var i = 0; i < active_btns.length; i++) {
+            if (active_btns[i].classList.contains("smp_buttons")) {
+                document.getElementById("smp_map").src = "https://" + active_btns[i].innerHTML + ".emc.gs/?worldname=town"
+            }
+        }
 });
 
+// Waste Button
+var wastes = document.getElementsByClassName("waste_buttons");
 
-
-document.getElementsByClassName("lnk_waste").addEventListener("click", function () {
-    var map = document.getElementById("smp_map");
-    var currentSMP = document.getElementsByClassName("active_server");
-    var waste_outpost_coords = none;
-    switch (this.id) {
-        case "lnk_waste_center":
-            waste_outpost_coords = "&x=0&z=0";
-            break;
-        case "lnk_waste_north":
-            waste_outpost_coords = "&x=0&z=-4000";
-            break;
-        case "lnk_waste_east":
-            waste_outpost_coords = "&x=4000&z=0";
-            break;
-        case "lnk_waste_south":
-            waste_outpost_coords = "&x=0&z=4000";
-            break;
-        case "lnk_waste_west":
-            waste_outpost_coords = "&x=-4000&z=0";
-            break;
-    }
-    map.src = currentSMP[0].href + "&worldname=wastelands" + waste_outpost_coords;
-});
-
-document.getElementsByClassName("server_buttons").addEventListener("click", function () {
-
-})
-
-// Functions
+for (var i = 0; i < wastes.length; i++) {
+    wastes[i].addEventListener("click", function () {
+        deactivateOutpostButtons();
+        this.classList.toggle("active_minecraft_button");
+        var x = 0;
+        var z = 0;
+        switch(this.innerHTML) {
+            case "Center":
+                break;
+            case "North":
+                x = 0;
+                z = -4000;
+                break;
+        }
+        document.getElementById("smp_map").src = "https://" + getActiveSMP() + ".emc.gs/?worldname=wastelands&x=" + x + "&z=" + z;
+    });
+}
