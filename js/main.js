@@ -28,6 +28,21 @@ function getActiveSMP() {
     return smp;
 }
 
+function setWasteMap(worldname) {
+    var x = 0;
+    var z = 0;
+    switch(this.innerHTML) {
+        case "Center":
+            break;
+        case "North":
+            x = 0;
+            z = -4000;
+            break;
+    }
+    document.getElementById("smp_map").src = "https://" + getActiveSMP() + ".emc.gs/?worldname=" + worldname + "&x=" + x + "&z=" + z;
+}
+
+
 // End of Functions
 
 
@@ -75,16 +90,17 @@ for (var i = 0; i < wastes.length; i++) {
     wastes[i].addEventListener("click", function () {
         deactivateOutpostButtons();
         this.classList.toggle("active_minecraft_button");
-        var x = 0;
-        var z = 0;
-        switch(this.innerHTML) {
-            case "Center":
-                break;
-            case "North":
-                x = 0;
-                z = -4000;
-                break;
-        }
-        document.getElementById("smp_map").src = "https://" + getActiveSMP() + ".emc.gs/?worldname=wastelands&x=" + x + "&z=" + z;
+        setWasteMap("wastelands");
+    });
+}
+
+// Nether Waste Button
+var wastes = document.getElementsByClassName("nether_waste_buttons");
+
+for (var i = 0; i < wastes.length; i++) {
+    wastes[i].addEventListener("click", function () {
+        deactivateOutpostButtons();
+        this.classList.toggle("active_minecraft_button");
+        setWasteMap("wastelands_nether");
     });
 }
