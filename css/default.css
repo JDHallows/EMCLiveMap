@@ -91,18 +91,18 @@ div.smp_right_panel {
 }
 
 /*Waste Buttons*/
-button.waste_buttons {
+button.waste_buttons, button.nether_waste_buttons, button.frontier_buttons {
   font-size: 1.3vw;
 }
-div.waste_left_panel, div.waste_center_panel, div.waste_right_panel {
+div.compass_left_panel, div.compass_center_panel, div.compass_right_panel {
   width: 33%;
 }
-div.waste_left_panel {
+div.compass_left_panel {
   float: left;
 }
-div.waste_center_panel {
+div.compass_center_panel {
   float: left;
 }
-div.waste_right_panel {
+div.compass_right_panel {
   float: right;
 }
