@@ -16,7 +16,7 @@ var acc = document.getElementsByClassName("accordion");
 
 for (var i = 0; i < acc.length; i++) {
     acc[i].addEventListener("click", function () {
-        this.classList.toggle("active_sidebar");
+        this.classList.toggle("active_minecraft_button");
         var panel = this.nextElementSibling;
         if (panel.style.display === "block") {
             panel.style.display = "none";
@@ -31,7 +31,7 @@ var smps = document.getElementsByClassName("smp_buttons");
 
 for (var i = 0; i < smps.length; i++) {
     smps[i].addEventListener("click", function () {
-        this.classList.toggle("active_smp");
+        this.classList.toggle("active_minecraft_button");
     });
 }
 

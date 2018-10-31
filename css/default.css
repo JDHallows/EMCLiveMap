@@ -1,4 +1,14 @@
-﻿/*Whole Page*/
+﻿/*Minecraft CSS Setup*/
+@font-face {
+  font-family: 'Minecraft';
+  src: url('http://charliecowan.co.uk/mcbuttongenerator/fonts/mcfont.eot');
+  src: url('http://charliecowan.co.uk/mcbuttongenerator/fonts/mcfont.eot?#iefix') format('embedded-opentype'),
+       url('http://charliecowan.co.uk/mcbuttongenerator/fonts/mcfont.woff') format('woff'),
+       url('http://charliecowan.co.uk/mcbuttongenerator/fonts/mcfont.ttf')  format('truetype'),
+       url('http://charliecowan.co.uk/mcbuttongenerator/fonts/mcfont.svg#svgFontName') format('svg');
+}
+
+/*Whole Page*/
 html, body {
   margin: 0;
   height: 100%;
@@ -23,22 +33,39 @@ html, body {
 }
 
 /*Main sidebar buttons*/
-button.sidebar_buttons {
+button.minecraft_buttons {
   width: 100%;
-  outline: none;
-  color: #000;
-  font-family: Arial;
+  outline: 2px solid black;
+  margin: 0;
+  background-image: url('http://charliecowan.co.uk/mcbuttongenerator/button_center.png');
+  background-repeat: repeat;
+  padding: 0;
+  font-family: Minecraft;
   text-align: center;
-  padding: 5px;
-  transition: 0.4s;
-}
-button.sidebar_buttons:hover {
-  background-color: #4CAF50;
+  font-size: 2vw;
   color: white;
+  text-shadow: 3px 3px #4C4C4C;
+  border-bottom: 4px solid #565656;
+  border-right: 2px solid #565656;
+  border-left: 2px solid #AAA;
+  border-top: 2px solid #AAA;
+  box-sizing: border-box;
 }
-button.active_sidebar {
-  background-color: #4CAF50;
-  color: white;
+button.minecraft_buttons:hover {
+  border-bottom: 4px solid #59639A;
+  border-right: 2px solid #59639A;
+  border-left: 2px solid #BDC6FF;
+  border-top: 2px solid #BDC6FF;
+  background-image: url('http://charliecowan.co.uk/mcbuttongenerator/button_active_center.png');
+  color: #FFFFA0;
+}
+button.active_minecraft_button {
+  border-bottom: 4px solid #59639A;
+  border-right: 2px solid #59639A;
+  border-left: 2px solid #BDC6FF;
+  border-top: 2px solid #BDC6FF;
+  background-image: url('http://charliecowan.co.uk/mcbuttongenerator/button_active_center.png');
+  color: #FFFFA0;
 }
 
 /*Panels*/
@@ -51,22 +78,7 @@ div.panel {
 
 /*SMP Buttons*/
 button.smp_buttons {
-  width: 100%;
-  outline: none;
-  color: #000;
-  font-family: Arial;
-  text-align: center;
-  padding: 5px;
-  transition: 0.4s;
-  margin: none;
-}
-button.smp_buttons:hover {
-  background-color: #4CAF50;
-  color: white;
-}
-button.active_smp {
-  background-color: #4CAF50;
-  color: white;
+  font-size: 1.5vw;
 }
 div.smp_left_panel, div.smp_right_panel {
   width: 50%;
