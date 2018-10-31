@@ -36,15 +36,9 @@ for (var i = 0; i < smps.length; i++) {
 }
 
 // On click events
-document.getElementById("btn_servers").addEventListener("click", function() {
-    return;
-});
-
 
 document.getElementById("btn_town").addEventListener("click", function () {
-    var map = document.getElementById("smp_map");
-    var currentSMP = document.getElementsByClassName("active_server");
-    map.src = currentSMP[0].href + "&worldname=town";
+    
 });
 
 
@@ -76,6 +70,5 @@ document.getElementsByClassName("lnk_waste").addEventListener("click", function 
 document.getElementsByClassName("server_buttons").addEventListener("click", function () {
 
 })
-
 
 // Functions

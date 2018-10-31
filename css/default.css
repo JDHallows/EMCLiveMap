@@ -1,21 +1,28 @@
-﻿html, body {
+﻿/*Whole Page*/
+html, body {
   margin: 0;
   height: 100%;
   width: 100%;
   background-color: rgb(0,0,0);
 }
-#sidebar {
-  width: 20%;
-  float: left;
-  margin: 0;
-  padding: 0;
-}
+
+/*Map*/
 #smp_map {
   height: 100%;
   width: 80%;
   float: right;
   border: none;
 }
+
+/*Sidebar*/
+#sidebar {
+  width: 20%;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+/*Main sidebar buttons*/
 button.sidebar_buttons {
   width: 100%;
   outline: none;
@@ -33,12 +40,16 @@ button.active_sidebar {
   background-color: #4CAF50;
   color: white;
 }
+
+/*Panels*/
 div.panel {
   width: 100%;               
   display: none;
   background-color: white;
   overflow: hidden;
 }
+
+/*SMP Buttons*/
 button.smp_buttons {
   width: 100%;
   outline: none;
@@ -53,7 +64,7 @@ button.smp_buttons:hover {
   background-color: #4CAF50;
   color: white;
 }
-button.active_button + .smp_buttons {
+button.active_smp {
   background-color: #4CAF50;
   color: white;
 }
@@ -66,3 +77,4 @@ div.smp_left_panel {
 div.smp_right_panel {
   float: right;
 }
+
