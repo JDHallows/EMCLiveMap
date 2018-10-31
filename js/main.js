@@ -1,4 +1,5 @@
-﻿// Add active class to the current server link (highlight it)
+﻿/*
+// Add active class to the current server link (highlight it)
 var header = document.getElementById("server_list");
 var btns = header.getElementsByClassName("server_link");
 for (var i = 0; i < btns.length; i++) {
@@ -8,14 +9,14 @@ for (var i = 0; i < btns.length; i++) {
         this.className += " active_server";
     });
 }
+*/
 
 // Accordion menu for world selection
 var acc = document.getElementsByClassName("accordion");
-var i;
 
-for (i = 0; i < acc.length; i++) {
+for (var i = 0; i < acc.length; i++) {
     acc[i].addEventListener("click", function () {
-        this.classList.toggle("active_world");
+        this.classList.toggle("active_sidebar");
         var panel = this.nextElementSibling;
         if (panel.style.display === "block") {
             panel.style.display = "none";
@@ -25,12 +26,28 @@ for (i = 0; i < acc.length; i++) {
     });
 }
 
+// SMP Buttons
+var smps = document.getElementsByClassName("smp_buttons");
+
+for (var i = 0; i < smps.length; i++) {
+    smps[i].addEventListener("click", function () {
+        this.classList.toggle("active_smp");
+    });
+}
+
 // On click events
+document.getElementById("btn_servers").addEventListener("click", function() {
+    return;
+});
+
+
 document.getElementById("btn_town").addEventListener("click", function () {
     var map = document.getElementById("smp_map");
     var currentSMP = document.getElementsByClassName("active_server");
     map.src = currentSMP[0].href + "&worldname=town";
 });
+
+
 
 document.getElementsByClassName("lnk_waste").addEventListener("click", function () {
     var map = document.getElementById("smp_map");
@@ -55,3 +72,10 @@ document.getElementsByClassName("lnk_waste").addEventListener("click", function 
     }
     map.src = currentSMP[0].href + "&worldname=wastelands" + waste_outpost_coords;
 });
+
+document.getElementsByClassName("server_buttons").addEventListener("click", function () {
+
+})
+
+
+// Functions
