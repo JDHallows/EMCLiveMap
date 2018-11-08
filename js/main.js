@@ -25,6 +25,13 @@ function deactivateSMPButtons() {
     }
 }
 
+function activateTownButton() {
+    var town_btn = document.getElementById("btn_town");
+    if (!town_btn.classList.contains("active_minecraft_button")) {
+        town_btn.classList.toggle("active_minecraft_button");
+    }
+}
+
 function getActiveSMP() {
     var smp;
     var active_btns = document.getElementsByClassName("active_minecraft_button");
@@ -159,6 +166,7 @@ for (var i = 0; i < smps.length; i++) {
         deactivateLocationButtons();
         deactivateSMPButtons();
         this.classList.toggle("active_minecraft_button");
+        activateTownButton();
         document.getElementById("smp_map").src = "https://" + this.innerHTML + ".emc.gs/";
     });
 }
